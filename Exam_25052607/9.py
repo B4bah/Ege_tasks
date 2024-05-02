@@ -6,3 +6,10 @@ with open('9.csv') as f:
         if (len(set(line)) == len(line)) ^ (2*(max(line) + min(line)) <= 3*(sum(line)-max(line)-min(line))):
             k += 1
     print(k)
+
+
+'''
+2314615 3379
+2346125 3425
+2361195 3447
+'''
