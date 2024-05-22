@@ -18,7 +18,7 @@ M = []
 for st, end in combinations(K, 2):
     if all(f(x) == .. for x in K):
         M += [end-st]
-print(round(min/max(M))
+print(round(min/max(M)))
 
 '''
 

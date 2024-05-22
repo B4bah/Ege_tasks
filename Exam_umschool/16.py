@@ -1,0 +1,9 @@
+from sys import setrecursionlimit
+
+setrecursionlimit(2029)
+def f(n):
+    if n == 1: return 1
+    if n > 1: return n + 2 + f(n-1)
+
+
+print(f(2028) + f(2022))
