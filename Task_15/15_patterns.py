@@ -67,8 +67,6 @@ def f(x):
 
 
 for a in range(., 100):
-    if all(f(x) == .. for x in range(.., 10000):
+    if all(f(x) == .. for x in range(.., 10000)):
         print(a)
-    else:
-        break
 '''
