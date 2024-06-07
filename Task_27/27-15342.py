@@ -9,25 +9,22 @@ with open('27B_15342.txt') as f:
         return guz_fuel // volume + int(guz_fuel % volume != 0)
 
 
-    def m_sort(item: int) -> int:
-        return item[1] == 93
-
-
     n, k = map(int, f.readline().split())
-    A = []
-    for s in f.readlines():
-        dist, fuel = map(int, s.split())
-        A.append([dist, fuel])
-    B = [item[0] for item in list(filter(m_sort, A))]
+    A = sorted([[int(y) for y in x.split()] for x in f.readlines()])
+    # A = []
+    # for s in f.readlines():
+    #     dist, fuel = map(int, s.split())
+    #     A.append([dist, fuel])
+    # B = [item[0] for item in list(filter(m_sort, A))]
     vol = 11
 
     total = []
 
-    for km in B:
+    for st in A:
         cost = 0
         for guz in A:
-            m_dist = min(abs(km[0] - guz[0]), abs(k - km[0] + guz[0]))
-            cost += m_dist * trips(A[guz[0]][1], vol)
+            m_dist = min(abs(st[0] - guz[0]), abs(k - st[0] + guz[0]))
+            cost += m_dist * trips(guz[1], vol)
         total.append(cost)
     print(min(total))
 
